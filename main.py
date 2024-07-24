@@ -1,10 +1,11 @@
 from fastapi import FastAPI
-from dotenv import load_dotenv
-from models import Card;
+from models import Card
+from pipefy_service import create_card;
+import os
 
-load_dotenv()
 app = FastAPI()
 
 @app.post("/api/v1/cards")
 def register_card(card: Card):
-    return {"card": card}
+    ids = create_card(card)
+    return {"ids": ids}
