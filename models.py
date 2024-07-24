@@ -1,6 +1,5 @@
 from datetime import datetime
 from typing import List, Optional
-from uuid import UUID, uuid4
 from pydantic import BaseModel
 
 class Participante(BaseModel):
@@ -10,9 +9,8 @@ class Participante(BaseModel):
     foto: str
 
 class Card(BaseModel):
-    id: Optional[UUID] = uuid4
     nome: str
     descricao: str
     data: datetime
-    duracao: float
+    duracao: int
     participantes: List[Participante] 

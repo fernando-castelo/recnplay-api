@@ -1,7 +1,10 @@
-from fastapi import FastAPI;
+from fastapi import FastAPI
+from dotenv import load_dotenv
+from models import Card;
 
+load_dotenv()
 app = FastAPI()
 
-@app.get("/")
-def root():
-    return {"Hello":"World"}
+@app.post("/api/v1/cards")
+def register_card(card: Card):
+    return {"card": card}
