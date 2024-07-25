@@ -1,0 +1,22 @@
+#Buscar valores do formulario inicial
+query {
+  pipe(id:304509333){
+    start_form_fields{
+      id
+      label
+      required
+      type
+    }
+  }
+}
+
+#Buscar valores da tabela
+query {
+  table(id:3045094293){
+   table_fields
+    id
+    label
+    type
+    required
+  }
+}

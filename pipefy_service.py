@@ -89,9 +89,10 @@ def handle_card_update(card_id, participantes_id):
     for id in participantes_id:
         try: 
             valor_id_list.append(id)
+            update_card(card_id, id)
         except Exception as e:
             print(f"Failed to update card: {e}")
-        update_card(card_id, id)
+        
 
 
 def update_card(card_id, id):
